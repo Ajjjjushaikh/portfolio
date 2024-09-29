@@ -1,0 +1,337 @@
+
+/* Global styles */
+/* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+} */
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: rgb(4, 3, 12);
+}
+
+
+
+/* Navbar container */
+nav {
+    display: flex;
+    gap: 20px;
+    background-color: rgb(74, 72, 92);
+    padding: 20px 40px;
+    border-radius: 10px;
+    width: 222rem;
+}
+
+/* Navbar items */
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    text-transform: uppercase;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for glowing animation */
+nav a:hover {
+    color: #00ffcc;
+}
+
+/* Glowing underline effect */
+nav a::before {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    background: #00ffcc;
+    bottom: 0;
+    left: 0;
+    transition: width 0.4s ease;
+    border-radius: 5px;
+}
+
+nav a:hover::before {
+    width: 100%;
+}
+
+/* Glowing hover background */
+nav a::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150%;
+    height: 150%;
+    background: rgba(0, 255, 204, 0.1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.3s ease;
+}
+
+nav a:hover::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+
+/* Header styles */
+header {
+    background-color: #f4f4f4;
+    padding: 1rem;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.menu {
+    list-style-type: none;
+}
+
+.menu li {
+    margin-left: 20px;
+}
+
+.menu a {
+    color: rgb(176, 169, 169);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: #007bff;
+}
+
+/* Home section styles */
+#home {
+    background-image: url(WhatsApp\ Image\ 2024-09-29\ at\ 5.50.37\ PM.jpeg);
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+#home h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* About section styles */
+.about {
+    background-color: #f8f9fa;
+    padding: 5px;
+    border: solid black;
+    border-radius: 2px;
+    border-bottom-right-radius: -20px;
+}
+
+.profile img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -20px;
+}
+
+/* Portfolio section styles */
+.portfolio {
+    padding: 2rem;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.project-item {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-5px) scale(1.05);
+}
+
+.project-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.project-item h3 {
+    padding: 1rem;
+    background-color: #0f2d4d;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* Contact section styles */
+.contact form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact input,
+.contact textarea {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.contact button {
+    background-color: #18395c;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact button:hover {
+    background-color: #173e67;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu li {
+        margin: 10px 0;
+    }
+
+    #home {
+        height: 60vh;
+    }
+
+    .profile img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .info {
+        margin-top: 1rem;
+    }
+
+    .portfolio {
+        padding: 1rem;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-item {
+        margin-bottom: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        padding: 0.5rem;
+    }
+
+    nav ul {
+        margin-top: 1rem;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .menu a {
+        font-size: 0.8rem;
+    }
+
+    #home {
+        height: 40vh;
+    }
+
+    .profile img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .info {
+        margin-top: 0.5rem;
+    }
+
+    .contact form {
+        max-width: 300px;
+    }
+}
+
+
+        /* Container for the animated text */
+        .animated-text {
+            font-size: 3rem;
+            color: rgb(253, 3, 3);
+            font-weight: bold;
+            overflow: hidden;
+            border-right: 5px solid black;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: 0.1em;
+            animation: typing 3.5s steps(30, end), blink-caret 0.5s step-end infinite;
+        }
+
+        /* Keyframe for typing effect */
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        /* Keyframe for blinking caret */
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: black; }
+        }
